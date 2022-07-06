@@ -2,7 +2,11 @@ import React from "react";
 class NewStudent extends React.Component{
     render(props){
         return(
-            <div>Hello,{this.props.name}</div>
+            <div>
+                <h1>Hello,{this.props.name}</h1>
+                <p>Email: {this.props.email}</p>
+            </div>
+
 
         );
     }
