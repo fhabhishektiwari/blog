@@ -14,6 +14,7 @@ function App() {
   const [nameOneEmail,setDataOneEmail]=useState("nishant@gmail.com");
   const[nameTwo,setDataTwo]=useState("Nima");
   const[nameTwoEmail,setDataTwoEmail]=useState("nima@gmail.com");    
+  
   return (
     <div className='App'>
       <Students name={nameOne} email={nameOneEmail} others={{address:"U.P.",mobile:"555-555-5555"}}/>
