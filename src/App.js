@@ -10,14 +10,15 @@ import NewStudent from './NewStudent';
 
 function App() {
   // useState=using for stored the data.
-  const [name,setData]=useState("Nishant");
-  const[stu2,setData2]=useState("Nima");
-  const[stu2Email,setData3]=useState("nima@gmail.com");    
+  const [nameOne,setDataOne]=useState("Nishant");
+  const [nameOneEmail,setDataOneEmail]=useState("nishant@gmail.com");
+  const[nameTwo,setDataTwo]=useState("Nima");
+  const[nameTwoEmail,setDataTwoEmail]=useState("nima@gmail.com");    
   return (
     <div className='App'>
-      <Students name={name} email={"abhishek.tiwari@firsthive.com"} others={{address:"U.P.",mobile:"555-555-5555"}}/>
-      <button onClick={()=>{setData('Abhishek');setData2('Nirmala');setData3("nirmala@gmail.com")}}>Click updateNewData</button>
-      <NewStudent name={stu2} email={stu2Email}/>
+      <Students name={nameOne} email={nameOneEmail} others={{address:"U.P.",mobile:"555-555-5555"}}/>
+      <button onClick={()=>{setDataOne('Abhishek');setDataOneEmail("abhishektiwari@gmail.com");setDataTwo('Nirmala');setDataTwoEmail("nirmala@gmail.com")}}>Click updateNewData</button>
+      <NewStudent name={nameTwo} email={nameTwoEmail}/>
     </div>
   );
 }
