@@ -1,25 +1,26 @@
 // import logo from './logo.svg';
 import './App.css';
-import React,{ useState } from 'react';
-
-import Students from './Students';
-import NewStudent from './NewStudent';
-
-// this is use when you direct export component
-// import { Users } from './Users';
-
+import React,{useState} from 'react';
 function App() {
-  // useState=using for stored the data.
-  const [nameOne,setDataOne]=useState("Nishant");
-  const [nameOneEmail,setDataOneEmail]=useState("nishant@gmail.com");
-  const[nameTwo,setDataTwo]=useState("Nima");
-  const[nameTwoEmail,setDataTwoEmail]=useState("nima@gmail.com");    
-  
+  // function getData(val){
+  //   console.log(val.target.value);
+  // }
+  const [data, setData] = useState(null);
+  const [print, setPrint] = useState(false);
   return (
     <div className='App'>
-      <Students name={nameOne} email={nameOneEmail} others={{address:"U.P.",mobile:"555-555-5555"}}/>
-      <button onClick={()=>{setDataOne('Abhishek');setDataOneEmail("abhishektiwari@gmail.com");setDataTwo('Nirmala');setDataTwoEmail("nirmala@gmail.com")}}>Click updateNewData</button>
-      <NewStudent name={nameTwo} email={nameTwoEmail}/>
+      <h1>Get value from Input</h1>
+      <input type={'text'} onChange={(val)=>{
+        // console.log(val.target.value);
+        setData(val.target.value);
+        setPrint(false);
+      }}/>
+      <button onClick={()=>setPrint(true)}>Click</button>
+      {
+        print?
+        <h1>{data}</h1>
+        :null
+      }
     </div>
   );
 }
