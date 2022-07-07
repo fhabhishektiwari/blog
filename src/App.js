@@ -1,23 +1,18 @@
 // import logo from './logo.svg';
 import './App.css';
 import React from 'react';
+import UserThree from './UserThree';
 
 
-class App extends React.Component{
-  constructor(){
-    super();
-    this.state={
-      data:"Nishant"
-    }
-  }
-  render(){
-    console.log("render")
+const  App=()=>{
+  const [name,setName]=React.useState("Nishant");
     return(
       <div>
-        <h1>Welcome {this.state.data}</h1>
+        <h1>Render Method in react</h1>
+        <UserThree name={name}/>
+        <button onClick={()=>{setName("Bhatnagar")}}>update data</button>
       </div>
     );
   }
-}
 
 export default App;
