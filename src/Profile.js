@@ -5,6 +5,9 @@ function Profile(){
     // const [loggedIn,setLoggedIn]=useState(false);
     // const [loggedIn,setLoggedIn]=useState(1);
     // const [loggedIn,setLoggedIn]=useState(2);
+    
+    // it is working 
+    
     const loggedIn=1;
 
         // return(
