@@ -4,11 +4,9 @@ function Profile(){
     // const [loggedIn,setLoggedIn]=useState(true);
     // const [loggedIn,setLoggedIn]=useState(false);
     // const [loggedIn,setLoggedIn]=useState(1);
-    // const [loggedIn,setLoggedIn]=useState(2);
+    const [loggedIn,setLoggedIn]=useState(2);
     
-    // it is working 
-    
-    const loggedIn=1;
+    // const loggedIn=1;
 
         // return(
         //     loggedIn?<h1>Welcome Nishant</h1>:<h1>Welcome Guest</h1>
