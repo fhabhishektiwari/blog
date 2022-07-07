@@ -1,18 +1,30 @@
 // import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import UserThree from './UserThree';
 
 
-const  App=()=>{
-  const [name,setName]=React.useState("Nishant");
+class  App extends React.Component{
+  constructor(){
+    super()
+    this.state={
+      name:"Amit"
+    }
+  }
+
+  componentDidMount(){
+    console.log("component did mount");
+  }
+
+  render(){
+    console.log("render");
     return(
-      <div>
-        <h1>Render Method in react</h1>
-        <UserThree name={name}/>
-        <button onClick={()=>{setName("Bhatnagar")}}>update data</button>
+      <div className='App'>
+        <h1>Component did mount {this.state.name}</h1>
+        <button onClick={()=>{
+          this.setState({name:"Ankur"});
+        }}>Update data</button>
       </div>
     );
   }
-
+}
 export default App;
