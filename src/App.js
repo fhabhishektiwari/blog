@@ -12,26 +12,21 @@ class  App extends React.Component{
     }
   }
 
-  componentDidUpdate(preProps,preState,snapShot){
-    console.log("component did update",preState.count,this.state.count);
-    // if(preState.count===this.state.count){
-    //   alert("already data same");
-    //   
-    // }
-
-    if(this.state.count<10){
-      this.setState({count:this.state.count+1})
+  shouldComponentUpdate(){
+    console.log("shouldComponentUpdate",this.state.count);
+    // return false;//by default
+    if(this.state.count>5 && this.state.count<10){
+      return true;
     }
-
   }
 
   render(){
     console.log("render");
     return(
       <div className='App'>
-        <h1>Component did update:it is use when state and props change{this.state.count}</h1>
+        <h1>Should Component Update: bydefault stop to render methods {this.state.count}</h1>
         <button onClick={()=>{
-          this.setState({count:1});
+          this.setState({count:this.state.count+1});
         }}>Update name</button>
       </div>
     );
