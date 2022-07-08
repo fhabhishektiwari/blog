@@ -6,23 +6,33 @@ import React from 'react';
 class  App extends React.Component{
   constructor(){
     super()
+    console.log("constructor");
     this.state={
-      name:"Amit"
+      count:0
     }
   }
 
-  componentDidMount(){
-    console.log("component did mount");
+  componentDidUpdate(preProps,preState,snapShot){
+    console.log("component did update",preState.count,this.state.count);
+    // if(preState.count===this.state.count){
+    //   alert("already data same");
+    //   
+    // }
+
+    if(this.state.count<10){
+      this.setState({count:this.state.count+1})
+    }
+
   }
 
   render(){
     console.log("render");
     return(
       <div className='App'>
-        <h1>Component did mount {this.state.name}</h1>
+        <h1>Component did update:it is use when state and props change{this.state.count}</h1>
         <button onClick={()=>{
-          this.setState({name:"Ankur"});
-        }}>Update data</button>
+          this.setState({count:1});
+        }}>Update name</button>
       </div>
     );
   }
