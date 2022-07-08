@@ -1,28 +1,17 @@
 // import logo from './logo.svg';
 import './App.css';
-import React from 'react';
-import StudentTwo from './StudentTwo';
+import React,{useState} from 'react';
 
 
-class  App extends React.Component{
-  constructor(){
-    super();
-    this.state={
-      show:true
-    }
-  }
-  render(){
-    return(
-      <div className='App'>
-      {
-        this.state.show ? <StudentTwo/>:<h1>Child component Remove</h1>
-
-      }
-        <button onClick={()=>{
-          this.setState({show:!this.state.show})
-        }}>Toggle Child Component</button>
-      </div>
-    );
-  }
+const  App=()=> {
+  const [data,setData]=useState("Nishant");
+  return(
+    <div>
+      <h1>Hello {data}</h1>
+      <button onClick={()=>{
+        setData("Ketan");
+      }}>Update Name</button>
+    </div>
+  );
 }
 export default App;
