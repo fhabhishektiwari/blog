@@ -1,33 +1,26 @@
 // import logo from './logo.svg';
 import './App.css';
 import React from 'react';
+import StudentTwo from './StudentTwo';
 
 
 class  App extends React.Component{
   constructor(){
-    super()
-    console.log("constructor");
+    super();
     this.state={
-      count:0
+      show:true
     }
   }
-
-  shouldComponentUpdate(){
-    console.log("shouldComponentUpdate",this.state.count);
-    // return false;//by default
-    if(this.state.count>5 && this.state.count<10){
-      return true;
-    }
-  }
-
   render(){
-    console.log("render");
     return(
       <div className='App'>
-        <h1>Should Component Update: bydefault stop to render methods {this.state.count}</h1>
+      {
+        this.state.show ? <StudentTwo/>:<h1>Child component Remove</h1>
+
+      }
         <button onClick={()=>{
-          this.setState({count:this.state.count+1});
-        }}>Update name</button>
+          this.setState({show:!this.state.show})
+        }}>Toggle Child Component</button>
       </div>
     );
   }
