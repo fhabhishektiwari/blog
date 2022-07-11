@@ -1,11 +1,12 @@
 // import logo from './logo.svg';
 import './App.css';
-import UserForm from './UserForm';
+import MuiComponent from './MuiComponent';
+
 
 const  App=()=> {
   return(
     <div className='App'>
-     <UserForm/>
+     <MuiComponent/>
     </div>
     
   );
