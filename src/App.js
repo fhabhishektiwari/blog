@@ -1,14 +1,14 @@
 // import logo from './logo.svg';
 import './App.css';
-import MuiComponent from './MuiComponent';
+import * as React from 'react';
+import UserProfiles from './UserProfiles';
 
-
-const  App=()=> {
+const App=()=>{
   return(
     <div className='App'>
-     <MuiComponent/>
+      <UserProfiles/>
     </div>
-    
   );
 }
+
 export default App;
