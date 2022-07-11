@@ -9,10 +9,11 @@ const  App=()=> {
     console.log("useeffect");
   })
   return(
-    <div>
+    <div className='App'>
       <h1>Hello {count}</h1>
       <button onClick={()=>setCount(count+1)}>Update Count</button>
     </div>
+    
   );
 }
 export default App;
