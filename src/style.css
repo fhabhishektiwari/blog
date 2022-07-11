@@ -1,0 +1,10 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.primary{
+    color: green;
+    background-color: black;
+    padding: 5px 0;
+}

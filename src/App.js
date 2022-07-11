@@ -1,34 +1,21 @@
 // import logo from './logo.svg';
 import './App.css';
-// import React,{useEffect,useState} from 'react';
-import React,{useState} from 'react';
+import './style.css';
+import style from './custom.module.css';
+// import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-import UserFour from './UserFour';
 
+// or less ideally
+import { Button } from 'react-bootstrap';
 
 const  App=()=> {
-  const [count,setCount]=useState(10);
-  const [data,setData]=useState(1);
-  // useEffect(()=>{
-  //   console.log("useeffect called");
-  // },[data]);//useEffect will works only for data not for count
-
-  // useEffect(()=>{
-  //   alert("count is: "+count);
-  // },[count]);
   return(
     <div className='App'>
-      <button onClick={()=>{
-        setData(data+1);
-      }}>Update data</button>
-      <button onClick={()=>{
-        setCount(count+1);
-      }}>Update Count</button>
-      <UserFour count={count} data={data}/>
-
-      {/* THIS ONE IS A VALID COMMENT */}
-      {/*<h1>data::{data}</h1>*/}
-      {/*<h1>Count::{count}</h1>*/}
+      <h1 className='primary'>Style type 1 in css</h1>
+      <h1 style={{color:'red',backgroundColor:'black',marginTop:'10px'}}>Style type 2 in css</h1>
+      <h1 className={style.success}>Style type 3(module css) in css</h1>
+      <Button className='btn btn-danger btn-sm'>Click to update</Button>
     </div>
     
   );
