@@ -1,29 +1,20 @@
 import './App.css'
-import React,{Fragment} from 'react';
-import ChildComponent from './ChildComponent';
+import React from 'react';
+
+import UserData from './UserData';
 const App=()=>{
+
+  function parentAlert(data){
+    // alert(data.name);
+    console.log(data)
+  }
+
+  // let data="Nishant";
   return(
-    // <>
-    //   <h1>React Fragment</h1>
-    // </>
-
-    // <React.Fragment>
-    //   <h1>React Fragment</h1>
-    // </React.Fragment>
-
-    // <Fragment>
-    //   <h1>React Fragment</h1>
-    // </Fragment>
-
     <div className='App'>
-      <h1>Fragment component</h1>
-      <table>
-        <tbody>
-          <tr>
-            <ChildComponent/>
-          </tr>
-        </tbody>
-      </table>
+      <h1>Lifting state up(Send data child to parent component)</h1>
+      {/*<UserData data={data}/>*/}
+      <UserData alert={parentAlert}/>
     </div>
 
   );
