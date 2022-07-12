@@ -1,25 +1,30 @@
 import './App.css'
-import React,{PureComponent,Component} from 'react';
-import UserSix from './UserSix';
-class App extends PureComponent{
-  constructor(){
-    super();
-    this.state={
-      count:1
-    }
-  }
-  render(){
-    console.warn("Check rerendering");
-    return(
+import React,{useState,useMemo} from 'react';
+const App=()=>{
+  const [count,setCount]=useState(0);
+  const [item,SetItem]=useState(10);
+  
+  // function multiCount(){
+  //   console.log("multicount called")
+  //   return count*2;
+  // }
+
+  const multiCountMemo=useMemo(function multiCount(){
+    console.log("MultiCount");
+    return count*5;
+  },[count])
+
+  return(
       <div className='App'>
-      {/*<h1>Pure Component in react {this.state.count}</h1>*/}
-      <UserSix count={this.state.count}/>
-        <button onClick={()=>this.setState({count:this.state.count})}>Update Count</button>
+        <h1>useMemo Hook in react</h1>
+        <button onClick={()=>setCount(count+1)}>Update Count</button>
+        <button onClick={()=>SetItem(item*10)}>Update Item</button>
+        <h3>Count: {count}</h3>
+        <h3>Item: {item}</h3>
+        <h3>{multiCountMemo}</h3>
       </div>
   
     );
-  }
-  
 }
 
 export default App;
