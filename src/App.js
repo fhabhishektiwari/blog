@@ -70,6 +70,13 @@ const App = () => {
                 <td>{data.email}</td>
                 <td>
                   <Table variant='dark' striped hover borderless>
+                    <thead>
+                      <tr>
+                        <th>Hn</th>
+                        <th>City</th>
+                        <th>Country</th>
+                      </tr>
+                    </thead>
                     <tbody>  
                   {
                       data.address.map((ad, key) => {
