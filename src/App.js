@@ -1,23 +1,25 @@
 import './App.css'
-import React from 'react';
-
-import UserData from './UserData';
-const App=()=>{
-
-  function parentAlert(data){
-    // alert(data.name);
-    console.log(data)
+import React,{PureComponent,Component} from 'react';
+import UserSix from './UserSix';
+class App extends PureComponent{
+  constructor(){
+    super();
+    this.state={
+      count:1
+    }
   }
-
-  // let data="Nishant";
-  return(
-    <div className='App'>
-      <h1>Lifting state up(Send data child to parent component)</h1>
-      {/*<UserData data={data}/>*/}
-      <UserData alert={parentAlert}/>
-    </div>
-
-  );
+  render(){
+    console.warn("Check rerendering");
+    return(
+      <div className='App'>
+      {/*<h1>Pure Component in react {this.state.count}</h1>*/}
+      <UserSix count={this.state.count}/>
+        <button onClick={()=>this.setState({count:this.state.count})}>Update Count</button>
+      </div>
+  
+    );
+  }
+  
 }
 
 export default App;
