@@ -1,22 +1,31 @@
 import './App.css'
-import UsersFive from './UsersFive';
+import React,{Fragment} from 'react';
+import ChildComponent from './ChildComponent';
 const App=()=>{
-  const users=[
-    {name:'Nishant',email:'nishant@gmail.com',contact:"333"},
-    {name:'Amit',email:'amit@gmail.com',contact:"111"},
-    {name:'Aman',email:'aman@gmail.com',contact:"222"},
-    {name:'Aniket',email:'aniket@gmail.com',contact:"333"},
-    {name:'Rahul',email:'rahul@gmail.com',contact:"333"},
-  ]
   return(
+    // <>
+    //   <h1>React Fragment</h1>
+    // </>
+
+    // <React.Fragment>
+    //   <h1>React Fragment</h1>
+    // </React.Fragment>
+
+    // <Fragment>
+    //   <h1>React Fragment</h1>
+    // </Fragment>
+
     <div className='App'>
-      <h1>Reuse Component with list</h1>
-      {
-        users.map((dt,i)=>{
-          return <UsersFive data={dt} key={i}/>
-        })
-      }
+      <h1>Fragment component</h1>
+      <table>
+        <tbody>
+          <tr>
+            <ChildComponent/>
+          </tr>
+        </tbody>
+      </table>
     </div>
+
   );
 }
 
