@@ -18,6 +18,7 @@ const App = () => {
       <Table border={1} striped bordered hover variant="light">
         <thead>
           <tr>
+            <th>Id</th>
             <th>Name</th>
             <th>Email</th>
             <th>Mobile Number</th>
@@ -26,7 +27,7 @@ const App = () => {
         <tbody>
         {
           users.map((data,key)=>
-          data.mobileno==='111'?
+          data.mobileno==='101'?
           <tr key={key}>
             <td>{key+1}</td>
             <td>{data.name}</td>
