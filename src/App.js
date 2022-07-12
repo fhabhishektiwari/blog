@@ -1,18 +1,18 @@
 import './App.css'
 import React,{useRef} from 'react';
+import NewChildComponent from './NewChildComponent';
 const App=()=>{
   let inputRef=useRef(null);
-  function handleInput(){
-    // console.log("clicked")
-    inputRef.current.value=1000;
-    inputRef.current.focus();
+  function updateInput(){
+    inputRef.current.value="1000";
     inputRef.current.style.color="red";
+    inputRef.current.focus();
   }
   return(
     <div className='App'>
-      <h1>useRef In React js</h1>
-      <input type='text' ref={inputRef}/>
-      <button onClick={()=>{handleInput()}}>Handle Input</button>
+      <h1>forwordRef In React js</h1>
+      <NewChildComponent ref={inputRef}/>
+      <button onClick={updateInput}>Update InputBox</button>
     </div>
   ); 
 
