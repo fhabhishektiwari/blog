@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, Pagination, FormControl,InputLabel,Input,FormHelperText,Icon } from '@mui/material';
+import { Button, Pagination, FormControl,InputLabel,Input,FormHelperText} from '@mui/material';
 
 const MuiComponent = () => {
     return (
