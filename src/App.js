@@ -1,34 +1,45 @@
 import './App.css'
-import React,{useRef} from 'react';
+import React, { useState } from 'react';
 const App=()=>{
-  let inputField1=useRef(null);
-  let inputField2=useRef(null);
   return(
     <div className='App'>
-      <h1>Uncontrolled Component</h1>
-
-      <form onSubmit={(e)=>e.preventDefault()}>
-        <input type='text' ref={inputField1} /><br/><br/>
-        <input type='text' ref={inputField2}/><br/><br/>
-        <input type='text' id='inp3'/><br/><br/>
-        <button onClick={()=>{
-          document.getElementById('id1').innerHTML+=inputField1.current.value;
-          document.getElementById('id2').innerHTML+=inputField2.current.value;
-          let inp3= document.getElementById('inp3').value;
-          document.getElementById('id3').innerHTML+=inp3;
-        }}>Submit</button> 
-      
-      </form>
-
-
-
-    <h3 id='id1'>First Name:</h3>
-    <h3 id='id2'>Last Name:</h3>
-    <h3 id='id3'>Age:</h3>
-
+      <h1>HOC(Hight order Component)</h1>
+      <HocRed cmp={Counter}/>
+      <HocGreen cmp={Counter}/>
+      <HocBlue cmp={Counter}/>
     </div>
-  ); 
+  );
+}
 
+const HocRed=(props)=>{
+  return(
+    <h1 style={{backgroundColor:'red',width:200,height:200,margin:25}}>Red<props.cmp/></h1>
+    //{/*<h1 style={{backgroundColor:'green',width:250,height:250}}><props.cmp/></h1> */}
+  );
+}
+
+const HocGreen=(props)=>{
+  return(
+      <h1 style={{backgroundColor:'green',width:200,height:200,margin:25}}>Green<props.cmp/></h1>
+    );
+}
+const HocBlue=(props)=>{
+  return(
+    <>
+      <h1 style={{backgroundColor:'blue',width:200,height:200,margin:25}}>Blue<props.cmp/></h1>
+    </>
+  );
+}
+
+
+const Counter=()=>{
+  const [count,setCount]=useState(0)
+  return(
+    <div>
+      <h3>{count}</h3>
+      <button onClick={()=>setCount(count+1)}>Update</button>
+  </div>
+  );
 }
 
 export default App;
