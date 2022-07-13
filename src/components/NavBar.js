@@ -6,7 +6,9 @@ const NavBar=()=>{
             <ul style={{listStyle:'none',display:'flex',justifyContent:'space-around'}}>
                 {/*<li><Link to='/'>Home</Link></li>*/}
                 {/*<li><Link to='/about'>About</Link></li>*/}
-                <a href="/about">About</a>
+                <li><Link to='/'>Home</Link></li>
+                {/* anchor tag not use in react beacause whole page is loaded*/}
+                <li><a href="/about">About</a></li>
             </ul>
         </div>
     );
