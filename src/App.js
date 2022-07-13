@@ -1,18 +1,30 @@
 import './App.css'
-import React,{useState} from 'react';
+import React,{useRef} from 'react';
 const App=()=>{
-  const [val,setVal]=useState("0");//default value
-  const [item,setItem]=useState("0");
+  let inputField1=useRef(null);
+  let inputField2=useRef(null);
   return(
     <div className='App'>
-      <h1>Controlled Component</h1>
-      {/* you can't modify the value*/}
-    {/*<input type='text' value="100"/>*/}
-    <input type='text' value={val} onChange={(e)=>setVal(e.target.value)}/>
-    <input type='text' value={item} onChange={(e)=>setItem(e.target.value)}/>
+      <h1>Uncontrolled Component</h1>
 
-    <h3>Value: {val}</h3>
-    <h3>Item: {item}</h3>
+      <form onSubmit={(e)=>e.preventDefault()}>
+        <input type='text' ref={inputField1} /><br/><br/>
+        <input type='text' ref={inputField2}/><br/><br/>
+        <input type='text' id='inp3'/><br/><br/>
+        <button onClick={()=>{
+          document.getElementById('id1').innerHTML+=inputField1.current.value;
+          document.getElementById('id2').innerHTML+=inputField2.current.value;
+          let inp3= document.getElementById('inp3').value;
+          document.getElementById('id3').innerHTML+=inp3;
+        }}>Submit</button> 
+      
+      </form>
+
+
+
+    <h3 id='id1'>First Name:</h3>
+    <h3 id='id2'>Last Name:</h3>
+    <h3 id='id3'>Age:</h3>
 
     </div>
   ); 
