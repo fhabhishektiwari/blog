@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 const User=()=>{
     const params=useParams();
     const {name}=params;
-    console.log(name);
+    // console.log(name);
     return(
         <>
             <h1>This is {name} Page</h1>

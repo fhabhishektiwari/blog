@@ -21,6 +21,7 @@ const App=()=>{
         <Route path='/about' element={<About/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/filter' element={<Filter/>}/>
+        <Route path='/user/:name' element={<User/>}/>
 
       </Routes>
     </BrowserRouter>
