@@ -14,6 +14,8 @@ const NavBar = () => {
                 <Nav><Link to="/">Home</Link></Nav>
                 <Nav><Link to='/about'>About</Link></Nav>
                 <Nav><Link to='/contact'>Contact Us</Link></Nav>
+                {/*<Nav><Link to='/user/anil'>Anil</Link></Nav>*/}
+                {/*<Nav><Link to='/user/peter'>Peter</Link></Nav>*/}
               </Nav>
             </Navbar.Collapse>
           </Container>

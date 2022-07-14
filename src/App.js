@@ -6,6 +6,7 @@ import About from './components/About';
 import NavBar from './components/NavBar';
 // import Page404 from './components/Page404';
 import Contact from './components/Contact';
+import User from './components/User';
 const App=()=>{
   return(
     <div className='App'>
@@ -17,8 +18,8 @@ const App=()=>{
         <Route path='/' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/contact' element={<Contact/>}/>
-        {/*<Route path='/*' element={<Page404/>}/>*/}
-        <Route path='/*' element={<Navigate to ='/' />}/>{/* Here we we can redirect any page*/}
+        <Route path='/*' element={<Navigate to='/' />}/>
+        <Route path='/user/:name' element={<User/>}/>
 
       </Routes>
     </BrowserRouter>
