@@ -8,6 +8,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import User from './components/User';
 import NewNavbar from './components/NewNavbar';
+import Filter from './components/Filter';
 const App=()=>{
   return(
     <div className='App'>
@@ -19,8 +20,7 @@ const App=()=>{
         <Route path='/' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/contact' element={<Contact/>}/>
-        <Route path='/*' element={<Navigate to='/' />}/>
-        <Route path='/user/:name' element={<User/>}/>
+        <Route path='/filter' element={<Filter/>}/>
 
       </Routes>
     </BrowserRouter>
