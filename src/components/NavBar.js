@@ -1,17 +1,24 @@
 import { Link } from "react-router-dom";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
-const NavBar=()=>{
-    return(
-        <div style={{backgroundColor:'#888',height:'50px',padding:'12px'}}>
-            <ul style={{listStyle:'none',display:'flex',justifyContent:'space-around'}}>
-                {/*<li><Link to='/'>Home</Link></li>*/}
-                {/*<li><Link to='/about'>About</Link></li>*/}
-                <li><Link to='/'>Home</Link></li>
-                {/* anchor tag not use in react beacause whole page is loaded*/}
-                <li><a href="/about">About</a></li>
-            </ul>
-        </div>
-    );
+const NavBar = () => {
+    return (
+        <Navbar bg="dark" expand="lg">
+          <Container>
+            <Navbar.Brand><Link to='/'>ReactLab</Link></Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="me-auto">
+                <Nav><Link to="/">Home</Link></Nav>
+                <Nav><Link to='/about'>About</Link></Nav>
+                <Nav><Link to='/contact'>Contact Us</Link></Nav>
+              </Nav>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
+      );
 }
 
 export default NavBar;
