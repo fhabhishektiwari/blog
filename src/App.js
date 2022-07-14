@@ -7,13 +7,14 @@ import NavBar from './components/NavBar';
 // import Page404 from './components/Page404';
 import Contact from './components/Contact';
 import User from './components/User';
+import NewNavbar from './components/NewNavbar';
 const App=()=>{
   return(
     <div className='App'>
     <BrowserRouter>
     {/*<Link to='/about'>About</Link><br/>
   <Link to='/'>Home</Link>*/}
-      <NavBar/>
+      <NewNavbar/>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>
