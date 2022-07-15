@@ -9,6 +9,7 @@ const NewContact=()=>{
             <NavLink className='nav-link' to='channel' style={({isActive})=>{return {color:isActive?'#fff':''} && {borderBottom:isActive?'2px solid #ff6f00':''}}}>Channel</NavLink>
             <NavLink className='nav-link' to='other' style={({isActive})=>{return {color:isActive?'#fff':''} && {borderBottom:isActive?'2px solid #ff6f00':''}}}>Other</NavLink>
             <Outlet/>
+            <p>this is contact page</p>
 
         </div>
     );

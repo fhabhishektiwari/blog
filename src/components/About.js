@@ -10,7 +10,7 @@ const About=()=>{
 
             <ul>
                 <li>
-                    <Link to='/user/Nishant' style={{marginLeft:20}}>Nishant</Link>
+                    <Link to='/user/Nishant' state={{name:'Nishant',age:23}} style={{marginLeft:20}}>Nishant</Link>
                     <Link to='/user/Ketan' style={{marginLeft:20}}>Ketan</Link>
                     <Link to='/user/Abhishek' style={{marginLeft:20}}>Abhishek</Link>
                 </li>

@@ -1,7 +1,7 @@
 import './App.css'
 import React from 'react';
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
-import Home from './components/Home';
+import NewHome from './components/NewHome';
 import About from './components/About';
 import User from './components/User';
 import NewNavbar from './components/NewNavbar';
@@ -16,7 +16,7 @@ const App=()=>{
     <BrowserRouter>
       <NewNavbar/>
       <Routes>
-        <Route path='/' element={<Home/>}/>
+        <Route path='/' element={<NewHome/>}/>
         <Route path='/about' element={<About/>}/>
 
         {/*Nested routing in react js*/}
