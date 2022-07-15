@@ -1,27 +1,34 @@
 import './App.css'
 import React from 'react';
-import {BrowserRouter, Navigate, Route, Routes} from 'react-router-dom'
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import Home from './components/Home';
 import About from './components/About';
-// import NavBar from './components/NavBar';
-// import Page404 from './components/Page404';
-import Contact from './components/Contact';
 import User from './components/User';
 import NewNavbar from './components/NewNavbar';
 import Filter from './components/Filter';
+import NewContact from './components/NewContact';
+import Company from './components/Company';
+import Channel from './components/Channel';
+import Other from './components/Other';
 const App=()=>{
   return(
     <div className='App'>
     <BrowserRouter>
-    {/*<Link to='/about'>About</Link><br/>
-  <Link to='/'>Home</Link>*/}
       <NewNavbar/>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>
-        <Route path='/contact' element={<Contact/>}/>
+
+        {/*Nested routing in react js*/}
+        <Route path='/contact' element={<NewContact/>}>
+          <Route path='company' element={<Company/>}/>
+          <Route path='channel' element={<Channel/>}/>
+          <Route path='other' element={<Other/>}/>
+        </Route>
         <Route path='/filter' element={<Filter/>}/>
         <Route path='/user/:name' element={<User/>}/>
+        
+
 
       </Routes>
     </BrowserRouter>
