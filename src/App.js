@@ -1,42 +1,42 @@
 import './App.css'
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import NewHome from './components/NewHome';
-import About from './components/About';
-import User from './components/User';
-import NewNavbar from './components/NewNavbar';
-import Filter from './components/Filter';
-import NewContact from './components/NewContact';
-import Company from './components/Company';
-import Channel from './components/Channel';
-import Other from './components/Other';
-import Login from './components/Login';
-import Protected from './components/Protected';
-const App = () => {
-  return (
+import { BrowserRouter as Router,Link,Route,Routes} from 'react-router-dom';
+
+const App=()=>{
+  return(
     <div className='App'>
-      <BrowserRouter>
-        <NewNavbar />
+       <Router>
+        <Link to='/home'>Home Page</Link>
+        <Link to='/about'>About Page</Link>
+
         <Routes>
-          <Route path='/' element={<Protected Component={NewHome} />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/about' element={<Protected Component={About} />} />
-
-          {/*Nested routing in react js*/}
-          <Route path='/contact/' element={<Protected Component={NewContact} />}>
-            <Route path='company' element={<Company />} />
-            <Route path='channel' element={<Channel />} />
-            <Route path='other' element={<Other />} />
-          </Route>
-          <Route path='/filter' element={<Protected Component={Filter} />} />
-          <Route path='/user/:name' element={<User />} />
-
-
-
+        <Route path='/home' element={<HomeOne/>}/>
+        <Route path='/about' element={<AboutOne/>}/>
         </Routes>
-      </BrowserRouter>
+        
+
+       </Router>
     </div>
   );
 }
+
+const HomeOne=()=>{
+  return(
+    <div>
+      <h1>Home Page</h1>
+      <p>This is Home Page</p>
+    </div>
+  );
+}
+
+const AboutOne=()=>{
+  return(
+    <div>
+      <h1>About Page</h1>
+      <p>This is About Page</p>
+    </div>
+  );
+}
+
 
 export default App;
