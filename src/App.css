@@ -39,6 +39,15 @@
   background: linear-gradient(to right,rgb(17, 105, 105),rgb(143, 143, 143));
 }
 
+.nav-link{
+  width: 110px;
+  display: inline-block;
+  text-decoration: none;
+  margin: 8px;
+  background-color: #888;
+  padding: 4px 12px;
+  color: #fff;
+}
 
 
 
